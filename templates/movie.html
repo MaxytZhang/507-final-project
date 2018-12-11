@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.bootcss.com/wordcloud2.js/1.1.0/wordcloud2.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>{{item['EngTitle']}}</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4">
+            <img class="rounded" src="{{item[9]}}" alt="{{item['EngTitle']}}">
+        </div>
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">{{item[7]}}</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong class="mr-3">English Name</strong>{{item[1]}}</li>
+                    <li class="list-group-item"><strong class="mr-3">中文名</strong>{{item[2]}}</li>
+                    <li class="list-group-item"><strong class="mr-3">Year / 上映年份</strong>{{item[3]}}</li>
+                    <li class="list-group-item"><strong class="mr-3">Runtime / 片长</strong>{{item[4]}}min</li>
+                    <li class="list-group-item"><strong class="mr-3">Country / 制片国家</strong>{{item[5]}}</li>
+                    <li class="list-group-item"><strong class="mr-3">Language / 语言</strong>{{item[6]}}</li>
+
+                </ul>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+alert("{{words}}")
+</script>
+</html>
