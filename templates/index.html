@@ -9,30 +9,40 @@
 </head>
 <body>
 <div class="container">
-    <h1> Welcome to Douban Top250 VS IMDB Top250 </h1>
+    <h1 class="justify-ceontent-center"> 豆瓣 Top250 VS IMDB Top250 </h1>
     <form action="" method="POST" class="form-incline">
-        <div class="row">
-        <div class="col-xl-2"></div>
-            <div class="col-xl-8">
-        <input type="text" name="rank" placeholder="Please enter one integer from 1 to 250"
-               class="form-control form-control-lg"></div>
-            </div>
-        <div class="col-xl-2"></div>
-        <div class="row">
-        <div class="col-xl-5"></div>
-        <div class="col-xl-2"><button type="submit" class="btn btn-primary btn-block">Search!</button></div>
-        <div class="col-xl-5"></div>
-            </div>
-
         <div class="input-group">
-            <input type="text" class="form-control form-control-lg" placeholder="Please enter one integer from 1 to 250" aria-label="one integer from 1 to 250"
+            <input type="text" name="rank" class="form-control form-control-lg" placeholder="Please enter one integer from 1 to 250"
+                   aria-label="one integer from 1 to 250"
                    aria-describedby="go">
             <div class="input-group-append">
-                <button class="btn btn-primary btn-lg" type="submit" id="go">   Go!   </button>
+                <button class="btn btn-primary btn-lg" type="submit" id="go"> Go!</button>
             </div>
         </div>
     </form>
-
+    <div class="card-group">
+        <div class="card border-dark">
+            <div class="card-body text-dark">
+                <h5 class="card-title">Actors</h5>
+                <p class="card-text">Find the most popular actors among 豆瓣Top250 movies!</p>
+                <a href="/actor" class="btn btn-dark">Analyze Actors!</a>
+            </div>
+        </div>
+        <div class="card border-dark">
+            <div class="card-body text-dark">
+                <h5 class="card-title">Directors</h5>
+                <p class="card-text">Find the most popular directors among 豆瓣Top250 movies!</p>
+                <a href="/director" class="btn btn-dark">Analyze Directors!</a>
+            </div>
+        </div>
+        <div class="card border-dark">
+            <div class="card-body text-dark">
+                <h5 class="card-title">Genres</h5>
+                <p class="card-text">Find the distriubtion of genres among 豆瓣Top250 movies!</p>
+                <a href="/genre" class="btn btn-dark">Analyze Genres!</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

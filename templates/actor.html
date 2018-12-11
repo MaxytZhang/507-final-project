@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="https://cdn.bootcss.com/wordcloud2.js/1.1.0/wordcloud2.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="canvas-container" align="center">
+    <canvas id="canvas1" width="600px" height="400px"></canvas>
+    <canvas id="canvas2" width="600px" height="400px"></canvas>
+</div>
+</body>
+<script>
+    var options1 = eval({
+        "list": {{ actors1|tojson }},
+        "gridSize": Math.round(16 * $('#canvas1').width() / 1024),
+        "weightFactor": function (size) {
+            return Math.pow(size, 2.3) * $('#canvas1').width() / 1024;
+        },
+        "fontFamily": 'Times, serif',
+        color: function (word, weight) {
+            return (weight === 8) ? '#f02222' : '#c09292';
+        },
+        "rotateRatio": 0.5,
+        "rotationSteps": 2,
+        "backgroundColor": '#ffe0e0'
+    })
+    var canvas1 = document.getElementById('canvas1');
+    WordCloud(canvas1, options1);
+    var options2 = eval({
+        "list": {{ actors2|tojson }},
+        "gridSize": Math.round(16 * $('#canvas2').width() / 1024),
+        "weightFactor": function (size) {
+            return Math.pow(size, 2.3) * $('#canvas2').width() / 1024;
+        },
+        "fontFamily": 'Times, serif',
+        // color: function (word, weight) {
+        //     return (weight === 8) ? '#f02222' : '#c09292';
+        // },
+        "color": 'random-dark',
+        "rotateRatio": 0.5,
+        "rotationSteps": 2,
+        "backgroundColor": '#ffe0e0'
+    })
+    var canvas2 = document.getElementById('canvas2');
+    WordCloud(canvas2, options2);
+</script>
+</html>

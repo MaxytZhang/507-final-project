@@ -15,7 +15,7 @@ class TestWebCrawler(unittest.TestCase):
     item_rating = item_star[0]
     item_votes = item_star[1][:-3]
     item_quote = item.find('div', class_='bd').find('p', class_='quote').get_text(strip=True)
-    item_text = catch_retrived(item_url, "", 'TEST1')
+    item_text = requests_catch(item_url, "", 'TEST1')
     item_soup = BeautifulSoup(item_text, 'html.parser')
     item_genre = item_soup.find_all('span', property='v:genre')
     item_genres_list = []

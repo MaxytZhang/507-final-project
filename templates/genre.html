@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="https://cdn.bootcss.com/wordcloud2.js/1.1.0/wordcloud2.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div id="myDiv1"></div>
+<div id="myDiv2"></div>
+</body>
+<script>
+    var alldata = {{genres1|tojson}};
+    var xdata = [];
+    var ydata = [];
+    for (i = 0; i < alldata.length; i++) {
+    xdata.push(alldata[i][0]);
+    ydata.push(alldata[i][1]);
+}
+    var alldata2 = {{genres2|tojson}};
+    var xdata2 = [];
+    var ydata2 = [];
+    for (i = 0; i < alldata2.length; i++) {
+    xdata2.push(alldata2[i][0]);
+    ydata2.push(alldata2[i][1]);
+}
+    var data1 = [
+  {
+    x: xdata,
+    y: ydata,
+    type: 'bar'
+  }
+];
+
+    var data2 = [
+  {
+    x: xdata2,
+    y: ydata2,
+    type: 'bar'
+  }
+];
+    Plotly.newPlot('myDiv1', data1);
+    Plotly.newPlot('myDiv2', data2);
+</script>
+</html>

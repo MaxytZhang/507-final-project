@@ -17,7 +17,7 @@
         </div>
         <div class="col-xl-8">
             <div class="card">
-                <div class="card-header">{{item[7]}}</div>
+                <div class="card-header">"{{item[7]}}"</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong class="mr-3">English Name</strong>{{item[1]}}</li>
                     <li class="list-group-item"><strong class="mr-3">中文名</strong>{{item[2]}}</li>
@@ -25,21 +25,47 @@
                     <li class="list-group-item"><strong class="mr-3">Runtime / 片长</strong>{{item[4]}}min</li>
                     <li class="list-group-item"><strong class="mr-3">Country / 制片国家</strong>{{item[5]}}</li>
                     <li class="list-group-item"><strong class="mr-3">Language / 语言</strong>{{item[6]}}</li>
-
+                    <li class="list-group-item"><strong class="mr-3">Quote / 引言</strong>"{{item[8]}}"</li>
                 </ul>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
             </div>
 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="jumbotron">
+                <h1 class="display-4">豆瓣 Top250: <strong class="text-primary">{{view[0][1]}}</strong></h1>
+                <h2>评分: <strong class="text-primary">{{view[0][2]}}</strong></h2>
+                <h3>评分人数: <strong class="text-primary">{{view[0][3]}}</strong></h3>
+                <hr class="my-4">
+                <ol class="breadcrumb" style="height: 50px">
+                    {% for tag in tag1 %}
+                    <li class="breadcrumb-item text-dark">{{tag[0]}}</li>
+                    {% endfor %}
+
+                </ol>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="jumbotron">
+                <h1 class="display-4">IMDB Top250: <strong class="text-primary">{{view[1][1]}}</strong></h1>
+                <h2>Rating: <strong class="text-primary">{{view[1][2]}}</strong></h2>
+                <h3>Votes: <strong class="text-primary">{{view[1][3]}}</strong></h3>
+                <hr class="my-4">
+                <ol class="breadcrumb" style="height: 50px">
+                    {% for tag in tag2 %}
+                    <li class="breadcrumb-item text-dark">{{tag[0]}}</li>
+                    {% endfor %}
+
+                </ol>
+            </div>
         </div>
     </div>
 </div>
 
 </body>
 <script>
-alert("{{words}}")
+
 </script>
 </html>
